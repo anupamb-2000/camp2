@@ -11,14 +11,6 @@ age INT,
 bloodGroup VARCHAR(5)
 );
 
-CREATE PROCEDURE validateID(@id INT)
-AS
-BEGIN
-	SELECT *
-	FROM patients
-	WHERE patientId = @id
-END;
-
 CREATE PROCEDURE insertPatient(@id INT, @name VARCHAR(50), @gender VARCHAR(5), @age INT, @bloodGroup VARCHAR(5))
 AS
 BEGIN
@@ -43,8 +35,4 @@ END;
 
 SELECT * FROM patients
 
-SELECT * FROM patients WHERE patientId = 152
 
-EXEC deletePatient 142
-
-TRUNCATE TABLE patients
